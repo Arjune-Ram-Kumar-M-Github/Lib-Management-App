@@ -1,0 +1,53 @@
+{{page-title "User"}}
+
+
+<div class="container">
+    <h1 class="text-center text-primary mt-5">User Details</h1>
+
+    {{!-- template-lint-disable table-groups --}}
+    <table class="table">
+      <tr>
+        <td>ID</td>
+        <td>{{this.model.id}}</td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>{{this.model.username}}</td>
+      </tr>
+      <tr>
+        <td>Joined Date</td>
+        <td>{{this.model.joinedDate}}</td>
+      </tr>
+      <tr>
+        <td>Books taken</td>
+        <td>{{this.model.userBooks.length}}</td>
+      </tr>
+    </table>
+
+    {{#if this.model.userBooks.length}}
+    <h1 class="text-center text-primary ">List of Books</h1>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+      </tr>
+      {{#each this.model.userBooks as |book|}}
+      <tr>
+          <td>{{book.id}}</td>
+
+          <td >
+            <LinkTo class="text-dark" @route="books.book" @model={{book.id}}>
+            {{book.bookName}}
+            </LinkTo>
+          </td>
+
+      </tr>
+
+    {{/each}}
+    </table>
+    {{/if}}
+
+</div>
+
+
+{{outlet}}

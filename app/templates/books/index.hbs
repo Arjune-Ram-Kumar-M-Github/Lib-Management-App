@@ -1,0 +1,39 @@
+{{page-title "Index"}}
+
+
+<div class="container mt-5">
+  <form >
+
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><span class="mr-2 mt-1"><i class="fa fa-search"></i></span>{{this.searchBy}}</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#" {{on 'click' this.selectSearchOption}}>Title</a>
+                <a class="dropdown-item" href="#" {{on 'click' this.selectSearchOption}}>Author</a>
+          </div>
+          </div>
+          <Input id="search" class="form-control" @type="text" @value={{this.searchValue}} {{on 'change' this.search}}></Input>
+        </div>
+
+  </form>
+
+  <h1 class="text-center mt-2 text-primary">Book List</h1>
+
+
+<ul class="list-group ">
+{{#each this.booksList as |book|}}
+    {{#if book.isAvailable}}
+      <li class="list-group-item text-center">
+      <LinkTo @route="books.book" @model={{book.id}}>
+          {{book.title}} , {{book.author}}
+      </LinkTo>
+      </li>
+    {{/if}}
+
+{{/each}}
+</ul>
+
+
+</div>
+
+{{outlet}}

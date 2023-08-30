@@ -1,7 +1,33 @@
 {{page-title "LibManagementApp"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  {{!-- template-lint-disable no-inline-styles --}}
+  <LinkTo @route="index" class="nav-brand font-weight-bold ">
+  <img class="mr-1" src="assests/images/zoho-logo.png" alt="zoho" style="height: 3rem;">
+  Zoho Library
+  </LinkTo>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav ml-auto justify-content-around">
+      <li class="nav-item">
+        <LinkTo @route="books" class="nav-link">Books</LinkTo>
+      </li>
+      <li class="nav-item">
+        <LinkTo @route="lend-book" class="nav-link" >Lend</LinkTo>
+      </li>
+      <li class="nav-item">
+        <LinkTo @route="return-book" class="nav-link" >Return</LinkTo>
+      </li>
+      <li class="nav-item">
+        <LinkTo @route="users" class="nav-link" >Users</LinkTo>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 
 {{outlet}}

@@ -1,0 +1,29 @@
+{{page-title "Index"}}
+
+<div class="container mt-5">
+  <h1 class="text-center text-primary">Users List </h1>
+
+<div class="w-50 ml-auto mr-auto">
+  <ul class="list-group">
+    {{#each this.model as |user|}}
+      <li class="list-group-item text-center">
+       
+        <LinkTo @route="users.user" @model={{user.id}}>
+            {{user.username}}
+        </LinkTo>
+      </li>
+    {{/each}}
+
+  </ul>
+</div>
+
+</div>
+
+
+
+<ul>
+
+</ul>
+
+
+{{outlet}}

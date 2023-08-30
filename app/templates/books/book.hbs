@@ -1,0 +1,46 @@
+{{page-title "Book"}}
+
+<div class="container mt-5">
+
+<h1 class="text-center text-primary ">Book Details</h1>
+{{!-- template-lint-disable table-groups --}}
+<table class="table text-center">
+  <tr>
+    <td>ID</td>
+    <td>{{this.model.id}}</td>
+  </tr>
+  <tr>
+    <td >Title</td>
+    <td>{{this.model.title}}</td>
+  </tr>
+  <tr>
+    <td >Author</td>
+    <td>{{this.model.author}}</td>
+  </tr>
+  <tr>
+    <td >Publication Date</td>
+    <td>{{this.model.publicationDate}}</td>
+  </tr>
+  <tr>
+    <td >Total Pages</td>
+    <td>{{this.model.totPage}}</td>
+  </tr>
+  <tr>
+    <td >Language</td>
+    <td>{{this.model.language}}</td>
+  </tr>
+  <tr>
+    <td >Publisher</td>
+    <td>{{this.model.publisher}}</td>
+  </tr>
+  <tr>
+    <td >  Dimension</td>
+    <td>{{this.model.dimension}}</td>
+  </tr>
+</table>
+</div>
+
+
+
+
+{{outlet}}

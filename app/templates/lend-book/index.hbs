@@ -1,0 +1,37 @@
+{{page-title "Index"}}
+
+<div class="container mt-5">
+  <h1 class="text-center text-primary ">Lend Book</h1>
+
+  <div class="w-75 ml-auto mr-auto mt-3">
+      <div class="form-row mb-2">
+        <label for="user" class="col text-center font-weight-bolder">Select User :</label>
+        <select class="form-control col" name="user" id="user"  {{on 'change' this.updateUser}}>
+          {{#each this.model.users as |user|}}
+            <option value={{user.id}}>{{user.username}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+      <div class="form-row mb-2">
+        <label class="col text-center font-weight-bolder" for="book">Select Book : </label>
+         <select class="form-control col" name="book" id="book" {{on 'change' this.updateBook}}>
+          {{#each this.model.books as |book|}}
+            {{#if book.isAvailable}}
+            <option value={{book.id}}>{{book.title}}</option>
+            {{/if}}
+          {{/each}}
+        </select>
+      </div>
+
+    <div class = 'form-row justify-content-center'>
+      <button class="col-6 btn btn-success" type="submit" {{on 'click' this.register}}>Register</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{{outlet}}
