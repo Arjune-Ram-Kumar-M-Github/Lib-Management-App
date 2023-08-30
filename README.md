@@ -1,3 +1,7 @@
+# App live link
+* [Library Management App](https://64ef12f974f2d0655ff80475--lucent-licorice-a3ecb0.netlify.app/)
+
+
 # lib-management-app
 
 This README outlines the details of collaborating on this Ember application.
